@@ -17,25 +17,33 @@ export default function Main() {
   return (
     <div className="container">
       <div className="row">
+        <h1 className="text-center mt-2 mb-2">
+          <em>Hollywood Actresses</em>
+        </h1>
         {actresses.map((actress, id) => {
           return (
-            <div className="col-4" key={id}>
-              <div className="card h-100">
+            <div className="col-3 mb-3 mt-3" key={id}>
+              <div
+                className="card h-100"
+                style={{ backgroundColor: "#939FC6" }}
+              >
                 <img
                   src={actress.image}
                   className="card-img-top"
                   alt={actress.name}
                 />
-                <div className="card-body">
+                <div className="card-body text-center">
                   <h5 className="card-title">{actress.name}</h5>
                   <div className="card-text">
-                    <ul>
-                      <li>
-                        {actress.birth_year} - {actress.nationality}
-                      </li>
-                      <li>{actress.biography}</li>
-                      <li>{actress.awards}</li>
-                    </ul>
+                    <p>
+                      {actress.birth_year} - {actress.nationality}
+                    </p>
+                    <p>
+                      <em>{actress.biography}</em>
+                    </p>
+                    <p>
+                      <strong>{actress.awards}</strong>
+                    </p>
                   </div>
                 </div>
               </div>
